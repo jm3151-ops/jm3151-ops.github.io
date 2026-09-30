@@ -4,65 +4,237 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaron Moni - Personal Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --tag-bg: #eff6ff;
+      --tag-text: #1d4ed8;
+      --border: #e2e8f0;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 2.5rem 1.25rem;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .profile-pic {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 2px solid var(--border);
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .personal-statement {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .skills-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .skills-list li {
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-links a {
+      display: inline-block;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-right: 1.25rem;
+    }
+
+    .project-links a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <img src="headshot.jpeg" alt="Jaron Moni Headshot" class="profile-pic">
-    <h1>Jaron Moni</h1>
+  <div class="container">
     <!-- SECTION 1: Personal Statement -->
-    <p class="personal-statement">
-     I am Jaron Moni, a passionate and goal-oriented professional who is driven by continuous learning, personal growth, and the pursuit of meaningful challenges.
-    </p>
-  </header>
+    <header>
+      <!-- If headshot.jpeg is not uploaded to your repo, you can delete the <img> line below -->
+      <img src="headshot.jpeg" alt="Jaron Moni Headshot" class="profile-pic" onerror="this.style.display='none'">
+      <h1>Jaron Moni</h1>
+      <p class="personal-statement">
+        I am Jaron Moni, a passionate and goal-oriented professional who is driven by continuous learning, personal growth, and the pursuit of meaningful challenges.
+      </p>
+    </header>
 
-  <!-- SECTION 2: Skills -->
-  <section id="technical skills">
-    <h2>Technical Skills</h2>
-    <ul class="skills-list">
-      <li>Microsoft Excel</li>
-      <li>Microsoft PowerPoint<</li>
-      <li>Microsoft Excel</li>
-      <li>Python</li>
-      <li>JavaScript</li>
-      <li>MySQL</li>
-      <li>Database Management</li>
-    </ul>
-<section id="professional skills">
-    <h2>Professional Skills</h2>
-    <ul class="skills-list">
-    <li>Communication</li>
-    <li>Teamwork &amp; Collaboration</li>
-    <li>Critical Thinking</li>
-    <li>Adaptability</li>
-    <li>Time Management</li>
-    </ul>
-  </section>
+    <main>
+      <!-- SECTION 2: Skills -->
+      <section id="skills">
+        <h2>Skills</h2>
 
-  <!-- SECTION 3: Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
+        <div class="skills-group">
+          <h3>Technical Skills</h3>
+          <ul class="skills-list">
+            <li>Microsoft Excel</li>
+            <li>Microsoft PowerPoint</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>MySQL</li>
+            <li>Data Acquisition</li>
+            <li>Database Management</li>
+          </ul>
+        </div>
 
-    <div class="project-card">
-      <h3>Bank of New York – Output Gap Consulting Project</h3>
-      <p>Led a semester-long consulting project with BNY Engineering, analyzing how workforce reductions and return-to-office policies affected a ~70-person engineering team. Developed and presented data-driven recommendations focused on improving productivity, employee retention, and overall workforce effectiveness.</p>
-      </div>
-    </div>
+        <div class="skills-group">
+          <h3>Professional Skills</h3>
+          <ul class="skills-list">
+            <li>Communication</li>
+            <li>Teamwork &amp; Collaboration</li>
+            <li>Critical Thinking</li>
+            <li>Adaptability</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
+      </section>
 
-    <div class="project-card">
-      <h3>Emanuel Lutheran Church – Community Outreach &amp; Fundraising Project</h3>
-      <p>Developed a community outreach and fundraising strategy by analyzing local community needs, event participation, and donation trends. Proposed initiatives designed to increase community engagement, volunteer participation, and fundraising effectiveness.</p>
-      <div class="project-links">
-        <a href="#">View Details</a>
-      </div>
-    </div>
+      <!-- SECTION 3: Projects -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
 
-  </section>
+          <article class="project-card">
+            <h4>Bank of New York – Output Gap Consulting Project</h4>
+            <p>
+              Led a semester-long consulting project with BNY Engineering, analyzing how workforce reductions and return-to-office policies affected a ~70-person engineering team. Developed and presented data-driven recommendations focused on improving productivity, employee retention, and overall workforce effectiveness.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">View Details &rarr;</a>
+            </div>
+          </article>
 
-  <footer>
-    <p>&copy; 2026 Jaron Moni. All rights reserved.</p>
-  </footer>
+          <article class="project-card">
+            <h4>Emanuel Lutheran Church – Community Outreach &amp; Fundraising Project</h4>
+            <p>
+              Developed a community outreach and fundraising strategy by analyzing local community needs, event participation, and donation trends. Proposed initiatives designed to increase community engagement, volunteer participation, and fundraising effectiveness.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">View Details &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Jaron Moni. All rights reserved.</p>
+    </footer>
+  </div>
 
 </body>
 </html>
