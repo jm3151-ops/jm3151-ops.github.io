@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
+  <title>Jaron Moni | Personal Portfolio</title>
   <style>
     :root {
       --bg: #f8fafc;
       --card-bg: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --primary: #2563eb;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --tag-bg: #eff6ff;
+      --tag-text: #1d4ed8;
       --border: #e2e8f0;
+      --radius: 8px;
     }
 
     * {
@@ -24,44 +28,63 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
       background-color: var(--bg);
-      color: var(--text);
+      color: var(--text-main);
       padding: 2.5rem 1.25rem;
     }
 
     .container {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
     }
 
+    /* Header Section */
     header {
-      margin-bottom: 3rem;
-      border-bottom: 1px solid var(--border);
       padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
     }
 
     h1 {
       font-size: 2.25rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
     }
 
     .personal-statement {
-      font-size: 1.2rem;
-      color: var(--muted);
-      font-weight: 400;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
+    /* Section Styling */
     section {
       margin-bottom: 2.5rem;
     }
 
     h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      position: relative;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.6rem;
     }
 
-    /* Skills Pill Grid */
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Skills Styling */
+    .skills-group {
+      margin-bottom: 1.25rem;
+    }
+
     .skills-list {
       display: flex;
       flex-wrap: wrap;
@@ -70,122 +93,132 @@
     }
 
     .skills-list li {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 0.4rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.9rem;
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.875rem;
       font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid #bfdbfe;
     }
 
-    /* Project Cards */
+    /* Projects Styling */
     .project-grid {
       display: grid;
       gap: 1.25rem;
     }
 
     .project-card {
-      background: var(--card-bg);
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius);
       padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
-    .project-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.4rem;
+    .project-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
     }
 
     .project-card p {
-      color: var(--muted);
       font-size: 0.95rem;
+      color: var(--text-muted);
       margin-bottom: 1rem;
     }
 
     .project-links a {
+      display: inline-block;
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       margin-right: 1.25rem;
     }
 
     .project-links a:hover {
+      color: var(--primary-hover);
       text-decoration: underline;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--text-muted);
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Header & Personal Statement -->
+    <!-- Header: Personal Statement -->
     <header>
-      <h1>Alex Morgan</h1>
-      <!-- Requirement 1: Clear, impactful one-sentence introduction -->
+      <h1>Jaron Moni</h1>
       <p class="personal-statement">
-        Quantitative analyst and developer focused on building scalable financial models, data-driven optimization tools, and robust web applications.
+        I am Jaron Moni, a passionate and goal-oriented professional who is driven by continuous learning, personal growth, and the pursuit of meaningful challenges.
       </p>
     </header>
 
     <main>
-      <!-- Requirement 2: Skills List -->
+      <!-- Skills Section -->
       <section id="skills">
-        <h2>Core Skills</h2>
-        <ul class="skills-list">
-          <li>Financial Modeling (DCF / WACC)</li>
-          <li>Python (NumPy, Pandas)</li>
-          <li>Operations Research & Optimization</li>
-          <li>SQL & Relational Databases</li>
-          <li>HTML5 & CSS3</li>
-          <li>Git & GitHub</li>
-        </ul>
+        <h2>Skills</h2>
+
+        <div class="skills-group">
+          <h3>Technical Skills</h3>
+          <ul class="skills-list">
+            <li>Microsoft Excel</li>
+            <li>Microsoft PowerPoint</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>MySQL</li>
+            <li>Data Acquisition</li>
+            <li>Database Management</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Professional Skills</h3>
+          <ul class="skills-list">
+            <li>Communication</li>
+            <li>Teamwork & Collaboration</li>
+            <li>Critical Thinking</li>
+            <li>Adaptability</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
       </section>
 
-      <!-- Requirement 3: 2-3 Relevant Projects -->
+      <!-- Projects Section -->
       <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2>Projects</h2>
         <div class="project-grid">
 
           <!-- Project 1 -->
           <article class="project-card">
-            <h3>Capital Budgeting & Valuation Engine</h3>
+            <h4>Bank of New York – Output Gap Consulting Project</h4>
             <p>
-              A Python-based simulation tool to calculate Net Present Value (NPV), Internal Rate of Return (IRR), and scenario analyses across multi-year asset lifespans.
+              Led a semester-long consulting project with BNY Engineering, analyzing how workforce reductions and return-to-office policies affected a ~70-person engineering team. Developed and presented data-driven recommendations focused on improving productivity, employee retention, and overall workforce effectiveness.
             </p>
             <div class="project-links">
-              <a href="https://github.com/your-username/valuation-engine" target="_blank" rel="noopener noreferrer">View Code &rarr;</a>
-              <a href="#" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">View Project Summary &rarr;</a>
             </div>
           </article>
 
           <!-- Project 2 -->
           <article class="project-card">
-            <h3>Linear Optimization & Resource Allocation Model</h3>
+            <h4>Emanuel Lutheran Church – Community Outreach & Fundraising Project</h4>
             <p>
-              Formulated and solved a mixed-integer linear programming model to maximize production throughput under dynamic material and labor constraints.
+              Developed a community outreach and fundraising strategy by analyzing local community needs, event participation, and donation trends. Proposed initiatives designed to increase community engagement, volunteer participation, and fundraising effectiveness.
             </p>
             <div class="project-links">
-              <a href="https://github.com/your-username/linear-optimizer" target="_blank" rel="noopener noreferrer">View Code &rarr;</a>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="project-card">
-            <h3>Personal Portfolio Website</h3>
-            <p>
-              A responsive, accessibility-focused static web portfolio hosted on GitHub Pages to showcase technical projects and credentials to recruiters.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/your-username/portfolio" target="_blank" rel="noopener noreferrer">View Code &rarr;</a>
-              <a href="https://your-username.github.io" target="_blank" rel="noopener noreferrer">Live Site &rarr;</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">View Strategy Details &rarr;</a>
             </div>
           </article>
 
@@ -194,7 +227,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Alex Morgan. Built with semantic HTML & CSS.</p>
+      <p>&copy; 2026 Jaron Moni. All rights reserved.</p>
     </footer>
   </div>
 
